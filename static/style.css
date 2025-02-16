@@ -1,0 +1,295 @@
+.container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+}
+.contact-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+.contact-header {
+    background: linear-gradient(135deg, #6a11cb 0%, #5995fc 100%);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+h2 {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 600;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 30px;
+}
+.form-group {
+    margin-bottom: 25px;
+}
+.head_tex {
+    font-weight: 600;
+    color: #4a5568;
+    margin-bottom: 8px;
+    display: block;
+}
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+input:focus, textarea:focus {
+    border-color: #4a5568;
+    outline: none;
+}
+textarea {
+    height: 120px;
+    resize: vertical;
+}
+.submit-btn {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.contact-info {
+    background-color: #f7fafc;
+    padding: 30px;
+    border-radius: 10px;
+}
+.contact-info i {
+    margin-right: 10px;
+    color: #4a5568;
+}
+.contact-info a {
+    color: #4a5568;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.contact-info a:hover {
+    color: #2b6cb0;
+}
+@media (max-width: 768px) {
+    .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+.header-link {
+    transition: color 0.3s ease;
+}
+.header-link:hover {
+    color: #4CAF50;
+}
+.footer-link {
+    transition: color 0.3s ease;
+}
+.category-button.active {
+    background-color: #3b82f6;
+    color: white;
+}
+.footer-link:hover {
+    color: #4CAF50;}
+    .view-product-btn {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #008CBA;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+.view-product-btn:hover {
+    background-color: #007B9A;
+}
+.product-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.product-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+.search-container {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+.search-container:hover {
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+.search-input {
+    transition: border-color 0.3s ease;
+}
+.search-input:focus {
+    border-color: #4CAF50;
+}
+.search-button {
+    transition: background-color 0.3s ease;
+}
+.search-button:hover {
+    background-color: #45a049;
+}
+.footer-link {
+    transition: color 0.3s ease;
+}
+.footer-link:hover {
+    color: #4CAF50;
+}
+#productInput {
+    padding: 10px;
+    font-size: 16px;
+    width: 300px;
+}
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #45a049;
+}
+#results {
+    margin-top: 20px;
+}
+.platform {
+    background-color: white;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.platform h2 {
+    color: #333;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 10px;
+}
+.product {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+.product img {
+    max-width: 100px;
+    height: auto;
+    margin-right: 15px;
+    float: left;
+}
+.product-details {
+    overflow: hidden;
+}
+.view-product-btn {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #008CBA;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+.view-product-btn:hover {
+    background-color: #007B9A;
+}
+.not-available {
+    color: #888;
+    font-style: italic;
+}
+.registration-container {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+.registration-form {
+    padding: 2rem;
+}
+.form-control {
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    padding: 0.75rem 1rem;
+}
+.btn-register {
+    background: #4CAF50;
+    border: none;
+    border-radius: 10px;
+    padding: 0.75rem 2rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.btn-register:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+}
+.social-login {
+    border-top: 1px solid #e0e0e0;
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+.social-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0.5rem;
+    transition: all 0.3s ease;
+}
+.social-btn:hover {
+    transform: scale(1.1);
+}
+.image-container {
+    background: url('https://images.unsplash.com/photo-1556742031-c6961e8560b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+    min-height: 300px;
+    padding: 100px top ;
+}
+@media (max-width: 768px) {
+    .image-container {
+        min-height: 200px;
+    }
+}
+.home-btn {
+    background-color: #4a5568;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+.home-btn:hover {
+    background-color: #2d3748;
+}
+.logout-btn {
+    background-color: #e53e3e;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.logout-btn:hover {
+    background-color: #c53030;
+}

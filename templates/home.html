@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeM Price Comparison</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+
+    <script src="/products.js" defer></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f8f6f6 0%, #100010 100%);   
+        } 
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+    <header class="bg-gray-800 text-white py-4">
+        <div class="container mx-auto px-4">
+            <nav class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold">GeM Price Comparison</h1>
+                <ul class="flex space-x-6">
+                    <li><a href="/templates/home.html" class="header-link ">Home</a></li>
+                    <li><a href="/templates/index.html" class="header-link ">Products</a></li>
+                    <li><a href="/templates/contactus.html" class="header-link ">Contact Us</a></li>
+                    <li><a href="/templates/profile.html" class="header-link ">Profile</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 bg-white">
+        <section class="mb-12 text-center">
+            <h2 class="text-3xl font-bold mb-4">Welcome to GeM Price Comparison</h2>
+            <p>Compare prices across Government e-Marketplace (GeM) and other popular e-commerce platforms to ensure you get the best deal.</p>
+        </section>
+
+        <section class="mb-12">
+            <h3 class="text-2xl font-semibold mb-6 text-center">Browse by Category</h3>
+            <div id="categories" class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- Category buttons will be added here dynamically -->
+            </div>
+        </section>
+
+        <div id="productSection" class="section hidden">
+            <h3 class="text-2xl font-semibold mb-6 text-center">Products</h3>
+            <div id="productList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Product cards will be dynamically inserted here -->
+            </div>
+        </div>
+        <section id="featuredProducts" class="mb-12">
+            <h2 class="text-2xl font-semibold mb-6 text-center">Featured Products</h2>
+            <div id="featuredProductList">
+                <!-- Featured products will be dynamically inserted here -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white mt-auto">
+        <div class="container mx-auto px-4 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Get to Know Us</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="footer-link hover:text-gray-300">About Us</a></li>
+                        <li><a href="#" class="footer-link hover:text-gray-300">Careers</a></li>
+                        <li><a href="#" class="footer-link hover:text-gray-300">Press Releases</a></li>
+                        <li><a href="#" class="footer-link hover:text-gray-300">Our Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect with Us</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="footer-link hover:text-gray-300">Facebook</a></li>
+                        <li><a href="#" class="footer-link hover:text-gray-300">Twitter</a></li>
+                        <li><a href="#" class="footer-link hover:text-gray-300">Instagram</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Make Money with Us</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="footer-link hover:text-gray-300">Sell on Our Platform</a></li>
+                        <li><a href="#" class="footer-link hover:text-gray-300">Become an Affiliate</a></li>
+                        <li><a href="#" class="footer-link hover:text-gray-300">Advertise Your Products</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Let Us Help You</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="footer-link hover:text-gray-300">Your Account</a></li>
+                        <li><a href="#" class="footer-link hover:text-gray-300">Returns Centre</a></li>
+                        <li><a href="#" class="footer-link hover:text-gray-300">100% Purchase Protection</a></li>
+                        <li><a href="#" class="footer-link hover:text-gray-300">Help</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center">
+                <p>&copy; 2024 GeM Price Comparison. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        
+        function loadCategories() {
+            fetch('gem_products_frontend.json')
+                .then(response => response.json())
+                .then(data => {
+                    const categories = Object.keys(data);
+                    const categoriesContainer = document.getElementById('categories');
+                    categoriesContainer.innerHTML = '';
+                    loadFeaturedProducts(); // Call this function after loading categories
+                })
+                .catch(error => console.error('Error loading categories:', error));
+                
+        }
+        function loadFeaturedProducts() {
+            fetch('gem_products_frontend.json')
+                .then(response => response.json())
+                .then(data => {
+                    const featuredProductList = document.getElementById('featuredProductList');
+                    featuredProductList.innerHTML = '';
+
+                    Object.entries(data).forEach(([category, products]) => {
+                        const categoryHeader = document.createElement('h3');
+                        categoryHeader.textContent = category;
+                        categoryHeader.className = 'text-xl font-semibold mb-4 mt-8';
+                        featuredProductList.appendChild(categoryHeader);
+
+                        const productGrid = document.createElement('div');
+                        productGrid.className = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8';
+
+                        products.slice(0, 4).forEach(product => {
+                            const productCard = createProductCard(product);
+                            productGrid.appendChild(productCard);
+                        });
+
+                        featuredProductList.appendChild(productGrid);
+                    });
+                })
+                .catch(error => console.error('Error loading featured products:', error));
+        }
+
+        function createProductCard(product) {
+            const card = document.createElement('div');
+            card.className = 'bg-white rounded-lg shadow-md p-4';
+            card.innerHTML = `
+                <img src="${product.image_url}" alt="${product.name}" class="w-full h-48 object-cover mb-4">
+                <h4 class="text-lg font-semibold mb-2">${product.name}</h4>
+                <p class="text-gray-600 mb-2">Price: ₹${product.price}</p>
+                <a href="${product.product_url}" target="_blank" class="view-product-btn view-product-btn:hover">View</a>
+            `;
+            return card;
+        }
+
+        document.addEventListener('DOMContentLoaded', loadCategories);
+        
+   
+   </script>
+</body>
+</html>
